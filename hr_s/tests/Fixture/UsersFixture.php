@@ -56,8 +56,8 @@ class UsersFixture extends TestFixture
                 'middlename' => 'Lorem ipsum dolor sit amet',
                 'email' => 'Lorem ipsum dolor sit amet',
                 'contact_number' => 1,
-                'created' => 1526098762,
-                'modified' => 1526098762,
+                'created' => 1526107857,
+                'modified' => 1526107857,
                 'role' => 'Lorem ipsum dolor sit amet'
             ],
         ];

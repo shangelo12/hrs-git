@@ -20,6 +20,9 @@ class HotelsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
         $hotels = $this->paginate($this->Hotels);
 
         $this->set(compact('hotels'));
@@ -35,7 +38,7 @@ class HotelsController extends AppController
     public function view($id = null)
     {
         $hotel = $this->Hotels->get($id, [
-            'contain' => ['Reservations', 'Rooms', 'Users']
+            'contain' => ['Users', 'Reservations', 'Rooms']
         ]);
 
         $this->set('hotel', $hotel);
@@ -58,7 +61,8 @@ class HotelsController extends AppController
             }
             $this->Flash->error(__('The hotel could not be saved. Please, try again.'));
         }
-        $this->set(compact('hotel'));
+        $users = $this->Hotels->Users->find('list', ['limit' => 200]);
+        $this->set(compact('hotel', 'users'));
     }
 
     /**
@@ -82,7 +86,8 @@ class HotelsController extends AppController
             }
             $this->Flash->error(__('The hotel could not be saved. Please, try again.'));
         }
-        $this->set(compact('hotel'));
+        $users = $this->Hotels->Users->find('list', ['limit' => 200]);
+        $this->set(compact('hotel', 'users'));
     }
 
     /**

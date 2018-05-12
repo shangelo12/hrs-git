@@ -8,12 +8,12 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Hotel'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Reservations'), ['controller' => 'Reservations', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Reservation'), ['controller' => 'Reservations', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Rooms'), ['controller' => 'Rooms', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Room'), ['controller' => 'Rooms', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="hotels index large-9 medium-8 columns content">
@@ -46,7 +46,7 @@
                 <td><?= h($hotel->images) ?></td>
                 <td><?= h($hotel->created) ?></td>
                 <td><?= h($hotel->modified) ?></td>
-                <td><?= $this->Number->format($hotel->users_id) ?></td>
+                <td><?= $hotel->has('user') ? $this->Html->link($hotel->user->id, ['controller' => 'Users', 'action' => 'view', $hotel->user->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $hotel->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $hotel->id]) ?>

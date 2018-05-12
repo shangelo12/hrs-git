@@ -54,7 +54,7 @@ class RoomsFixture extends TestFixture
                 'description' => 'Lorem ipsum dolor sit amet',
                 'images' => 'Lorem ipsum dolor sit amet',
                 'room_avi' => 1,
-                'created' => 1526030042,
+                'created' => 1526107929,
                 'hotel_id' => 1
             ],
         ];

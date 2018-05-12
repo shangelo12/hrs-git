@@ -25,7 +25,7 @@
             echo $this->Form->control('email');
             echo $this->Form->control('contact_number');
             echo $this->Form->control('role',array(
-                'options' => array('Admin','Manager','User'),
+                'options' =>array('Admin', 'Manager', 'User'),
                 'empty' => '(choose one)',));
 
         ?>

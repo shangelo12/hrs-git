@@ -25,9 +25,9 @@ class HotelsTableTest extends TestCase
      */
     public $fixtures = [
         'app.hotels',
+        'app.users',
         'app.reservations',
-        'app.rooms',
-        'app.users'
+        'app.rooms'
     ];
 
     /**

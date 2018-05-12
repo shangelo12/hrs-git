@@ -57,8 +57,8 @@ class HotelsFixture extends TestFixture
                 'contact_num' => 1,
                 'description' => 'Lorem ipsum dolor sit amet',
                 'images' => 'Lorem ipsum dolor sit amet',
-                'created' => 1526033361,
-                'modified' => 1526033361,
+                'created' => 1526107873,
+                'modified' => 1526107873,
                 'users_id' => 1
             ],
         ];

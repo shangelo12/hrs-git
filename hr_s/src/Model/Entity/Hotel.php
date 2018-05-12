@@ -17,9 +17,9 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $modified
  * @property int $users_id
  *
+ * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Reservation[] $reservations
  * @property \App\Model\Entity\Room[] $rooms
- * @property \App\Model\Entity\User[] $users
  */
 class Hotel extends Entity
 {
@@ -43,8 +43,8 @@ class Hotel extends Entity
         'created' => true,
         'modified' => true,
         'users_id' => true,
+        'user' => true,
         'reservations' => true,
-        'rooms' => true,
-        'users' => true
+        'rooms' => true
     ];
 }
